@@ -3,33 +3,45 @@
 exports[`testing for Container presentation renders the container page with all of its components 1`] = `
 <ul
   aria-label="history-list"
+  class="historyList"
 >
-  <li>
+  <h2>
+    Your History
+  </h2>
+  <li
+    class="listItem"
+  >
     <div>
       GET
        
-      http://imthebomb.com
+      https://alchemeetings.alchemycodelab.io/?
     </div>
   </li>
-  <li>
+  <li
+    class="listItem"
+  >
     <div>
       POST
        
-      http://imthebomb.com
+      http://codethebomb.com
     </div>
   </li>
-  <li>
+  <li
+    class="listItem"
+  >
     <div>
       PUT
        
-      http://imthebomb.com
+      https://github.com/
     </div>
   </li>
-  <li>
+  <li
+    class="listItem"
+  >
     <div>
       DELETE
        
-      http://imthebomb.com
+      https://rickandmortyapi.com/documentation
     </div>
   </li>
 </ul>
@@ -38,9 +50,10 @@ exports[`testing for Container presentation renders the container page with all 
 exports[`testing for Container presentation renders the container page with all of its components 2`] = `
 <div
   aria-label="json-results"
+  class="results"
 >
   <h3>
-    Results!
+    Results:
   </h3>
   <p>
     "[{fake: but real to me}]"

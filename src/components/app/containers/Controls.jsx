@@ -27,7 +27,7 @@ const Controls = ({ onChange, submitChange, json, url, method}) => {
                         </div>
                         <button className={styles.goButton}>Go!</button>
                     </section>
-                    <textarea className={styles.textArea} value={json} name="jsonViews" onChange={onChange} placeholder="Raw JSON Body"></textarea>
+                    <textarea className={styles.textArea} name="jsonViews" onChange={onChange} placeholder="Raw JSON Body"></textarea>
                 </form>
                 
             </div>
