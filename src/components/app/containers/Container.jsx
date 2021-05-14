@@ -1,49 +1,56 @@
 import React, { Component } from 'react'
 import Controls from './Controls'
-import { getRequest, postRequest, deleteRequest, putRequest } from '../../../apiUtils'
+import HistoryList from '../presentations/HistoryList'
+import Results from '../presentations/Results'
+import { makeARequest } from '../../../apiUtils'
+
 
 export default class Container extends Component {
     state = { 
         url: '',
+        method: 'GET', 
         rawJSON: '', 
-        method: ''
+        history: [
+            {
+                id: '4ubi38hidsf',
+                hmethod: 'GET',
+                URL: 'http://imthebomb.com'
+            },
+            {
+                id: 'vjioner930',
+                hmethod: 'POST',
+                URL: 'http://imthebomb.com'
+            },
+            {
+                id: '6987yvdfe',
+                hmethod: 'PUT',
+                URL: 'http://imthebomb.com'
+            },
+            {
+                id: '09u3f0fjif',
+                hmethod: 'DELETE',
+                URL: 'http://imthebomb.com'
+            },
+        ],
+        endResult: '[{fake: but real to me}]'
     }
 
-    // handleURLChange = (e) => { 
-    //     // e.preventDefault();
-    //     // console.log(e.target.value)
-    //     this.setState({ 
-    //         url: e.target.value
-    //     })
-    // }
     handleChange = (e) => {
         const { name, value } = e.target;
+        console.log(name, 'name');
+        console.log(value, 'target')
         this.setState({ [name]: value })
       }
 
-    handleSubmitChange = (e) => { 
+
+    handleFormSubmit = async (e) => { 
         e.preventDefault();
-        const { url, rawJSON, method } = this.state
-        switch(method) { 
-            case 'GET':
-                getRequest(url)
-                    .then(res => this.setState({ array: res }));
-                break;
-            case 'POST': 
-                postRequest(url, rawJSON);
-                break; 
-            case 'DELETE':
-                deleteRequest(url);
-                break;
-            case 'PUT':
-                putRequest(url, rawJSON);   
-                break;
-                default: 
-                    console.log('Please select a method');
-                break;  
+        let result;
+        try { 
+            result = await makeARequest(this.state.method, this.state.url, this.state.rawJSON);
+        } catch(err) { 
+            result = `Mayday mayday, abort mission ${err}!`
         }
-
-
     }
 
     render() {
@@ -51,10 +58,15 @@ export default class Container extends Component {
             <div>
               <Controls
                 onChange={this.handleChange}
-                submitChange={this.handleSubmitChange}
+                submitChange={this.handleFormSubmit}
                 url={this.state.url}
-                rawJSON={this.state.rawJSON}
+                json={this.state.rawJSON}
+                method={this.state.method}
               />  
+              <Results
+                results={this.state.endResult}/>
+              <HistoryList
+                history={this.state.history}/>
             </div>
         )
     }

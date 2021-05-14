@@ -3,23 +3,19 @@
 }
 
 .form { 
-    /* background-color: pink; */
-    justify-content: flex-end;
-    width: 60%;
-    height: 150px;
+    background-color: teal;
+    /* justify-content: flex-end; */
+    width: 65%;
+    height: px;
     text-align: center;
 }
 
 .url { 
-    width: 100%;
+    width: 90%;
     text-align: left;
     margin-top: 5px;
     padding: 4px;
 }
-
-/* input.radioButtons { 
-    visibility: hidden;
-} */
 
 label { 
     cursor: pointer;
@@ -31,31 +27,41 @@ input {
 }
 
 .formLabels { 
-    background-color: #204060;
+    background-color: #a43597;
     color: whitesmoke;
+    margin-left: 10px;
+    margin-right: 25px;
     margin-bottom: 25px;
 }
 
 .radioButtons { 
-    visibility: hidden;
     width: 25px;
     height: 25px;
     margin-bottom: 10px;
 
 }
-.radios { 
+
+.radios input[type=radio]{ 
+    /* display: none; */
     margin-top: 10px;
     margin-bottom: 25px;
+    cursor: pointer;
+}
+.radios input[type=radio]:checked + span { 
+    font-weight: bold;
+    background-color: black;
 }
 
 .goButton { 
     cursor: pointer;
+    width: 50px;
+    
+}
+.goButton:hover { 
+    background-color: tomato;
+    color: whitesmoke
 }
 
-/* .gatherButtons { 
-    flex-direction: row;
-    flex-wrap: wrap;
-} */
 .textArea { 
     margin-top: 5px;
     width: 550px;
