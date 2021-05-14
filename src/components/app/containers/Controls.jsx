@@ -2,22 +2,33 @@ import React from 'react'
 import styles from './Containers.module.css'
 
 
-const Controls = ({ handleURLChange, submitChange }) => {
+const Controls = ({ onChange, submitChange, rawJSON, url}) => {
+    // console.log(onChange)
         return (
             <div className={styles.bigDiv}>
                 <form className={styles.form}
                     onSubmit={submitChange}>
-                    <input type="text" placeholder="URL" className={styles.url}
-                        onChange={handleURLChange}/>
+
+                    <input 
+                        type="text"
+                        // value={url}
+                        placeholder="URL" 
+                        className={styles.url}
+                        onChange={onChange}
+                        />
+
                     <section className={styles.gatherButtons}>
                         <div className={styles.radios}>
-                            <input className={styles.radioButton} type="radio" id="get" name="method" value="GET"/>
+                            <input className={styles.radioButton} type="radio" name="method" value="GET" onChange={onChange}/>
                             <label className={styles.formLabels}>GET</label>
-                            <input className={styles.radioButton} type="radio" id="post" name="method" value="POST"/>
+
+                            <input className={styles.radioButton} type="radio" name="method" value="POST" onChange={onChange}/>
                             <label className={styles.formLabels}>POST</label>
-                            <input className={styles.radioButton} type="radio" id="put" name="method" value="PUT"/>
+
+                            <input className={styles.radioButton} type="radio" name="method" value="PUT" onChange={onChange}/>
                             <label className={styles.formLabels}>PUT</label>
-                            <input className={styles.radioButton} type="radio" id="delete" name="method" value="DELETE"/>
+
+                            <input className={styles.radioButton} type="radio" name="method" value="DELETE" onChange={onChange}/>
                             <label className={styles.formLabels}>DELETE</label>
                         </div>
                         <button className={styles.goButton}>Go!</button>

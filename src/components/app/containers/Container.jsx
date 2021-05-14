@@ -9,13 +9,17 @@ export default class Container extends Component {
         method: ''
     }
 
-    handleURLChange = (e) => { 
-        // e.preventDefault();
-        // console.log(e.target.value)
-        this.setState({ 
-            url: e.target.value
-        })
-    }
+    // handleURLChange = (e) => { 
+    //     // e.preventDefault();
+    //     // console.log(e.target.value)
+    //     this.setState({ 
+    //         url: e.target.value
+    //     })
+    // }
+    handleChange = (e) => {
+        const { name, value } = e.target;
+        this.setState({ [name]: value })
+      }
 
     handleSubmitChange = (e) => { 
         e.preventDefault();
@@ -46,7 +50,7 @@ export default class Container extends Component {
         return (
             <div>
               <Controls
-                onChange={this.handleURLChange}
+                onChange={this.handleChange}
                 submitChange={this.handleSubmitChange}
                 url={this.state.url}
                 rawJSON={this.state.rawJSON}
