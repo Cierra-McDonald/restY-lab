@@ -1,0 +1,65 @@
+.bigDiv { 
+    justify-content: flex-end;
+}
+
+.form { 
+    /* background-color: pink; */
+    justify-content: flex-end;
+    width: 60%;
+    height: 150px;
+    text-align: center;
+}
+
+.url { 
+    width: 100%;
+    text-align: left;
+    margin-top: 5px;
+    padding: 4px;
+}
+
+/* input.radioButtons { 
+    visibility: hidden;
+} */
+
+label { 
+    cursor: pointer;
+    width: 25px
+}
+input { 
+    background-color: whitesmoke;
+    color:#204060;
+}
+
+.formLabels { 
+    background-color: #204060;
+    color: whitesmoke;
+    margin-bottom: 25px;
+}
+
+.radioButtons { 
+    visibility: hidden;
+    width: 25px;
+    height: 25px;
+    margin-bottom: 10px;
+
+}
+.radios { 
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.goButton { 
+    cursor: pointer;
+}
+
+/* .gatherButtons { 
+    flex-direction: row;
+    flex-wrap: wrap;
+} */
+.textArea { 
+    margin-top: 5px;
+    width: 550px;
+    height: 9vw;
+    align-self: flex-start;
+    text-align: left;
+}
