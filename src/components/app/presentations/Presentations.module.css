@@ -8,3 +8,34 @@
     font-family: cursive;
     font-style: italic; 
 }
+
+.results { 
+    background-color: whitesmoke;
+    margin-top: 1%;
+    border: solid black 2px;
+    width: 99.7%;
+    height: 250px;
+}
+
+
+.results h3 { 
+    text-align: center;
+}
+
+.historyList { 
+    /* background-color: violet; */
+    border: black 5px solid;
+    margin-right: 3%;
+    margin-left: 5%;
+    list-style: none;
+    margin-top: .5px;
+    text-align: left;
+    height: 452px;
+}
+.historyList h2{ 
+    text-align: left;
+}
+
+.listItem { 
+    padding-bottom: 5px;
+}

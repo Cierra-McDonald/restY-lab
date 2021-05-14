@@ -3,6 +3,8 @@ import Controls from './Controls'
 import HistoryList from '../presentations/HistoryList'
 import Results from '../presentations/Results'
 import { makeARequest } from '../../../apiUtils'
+import styles from './Containers.module.css'
+
 
 
 export default class Container extends Component {
@@ -14,22 +16,22 @@ export default class Container extends Component {
             {
                 id: '4ubi38hidsf',
                 hmethod: 'GET',
-                URL: 'http://imthebomb.com'
+                URL: 'https://alchemeetings.alchemycodelab.io/?'
             },
             {
                 id: 'vjioner930',
                 hmethod: 'POST',
-                URL: 'http://imthebomb.com'
+                URL: 'http://codethebomb.com'
             },
             {
                 id: '6987yvdfe',
                 hmethod: 'PUT',
-                URL: 'http://imthebomb.com'
+                URL: 'https://github.com/'
             },
             {
                 id: '09u3f0fjif',
                 hmethod: 'DELETE',
-                URL: 'http://imthebomb.com'
+                URL: 'https://rickandmortyapi.com/documentation'
             },
         ],
         endResult: '[{fake: but real to me}]'
@@ -37,8 +39,6 @@ export default class Container extends Component {
 
     handleChange = (e) => {
         const { name, value } = e.target;
-        console.log(name, 'name');
-        console.log(value, 'target')
         this.setState({ [name]: value })
       }
 
@@ -55,7 +55,7 @@ export default class Container extends Component {
 
     render() {
         return (
-            <div>
+            <div className={styles.container}>
               <Controls
                 onChange={this.handleChange}
                 submitChange={this.handleFormSubmit}
@@ -63,10 +63,10 @@ export default class Container extends Component {
                 json={this.state.rawJSON}
                 method={this.state.method}
               />  
-              <Results
-                results={this.state.endResult}/>
               <HistoryList
                 history={this.state.history}/>
+              <Results
+                results={this.state.endResult}/>
             </div>
         )
     }
