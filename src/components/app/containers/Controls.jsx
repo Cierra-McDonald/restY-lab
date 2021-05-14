@@ -3,31 +3,12 @@ import styles from './Containers.module.css'
 
 
 
-export default class Controls extends Component {
-    state = { 
-        url: '',
-        rawJSON: '', 
-    }
-
-    handleURLChange = (e) => { 
-        e.preventDefault();
-        console.log(e.target.value)
-        this.setState({ 
-            url: e.target.value
-        })
-    }
-
-    handleSubmitChange = (e) => { 
-        
-    }
-
-
-    render() {
+const Controls = ({ handleURLChange }) => {
         return (
             <div className={styles.bigDiv}>
                 <form className={styles.form}>
                     <input type="text" placeholder="URL" className={styles.url}
-                        onChange={this.handleURLChange}/>
+                        onChange={handleURLChange}/>
                     <section className={styles.gatherButtons}>
                         <div className={styles.radios}>
                             <input className={styles.radioButton} type="radio" id="get" name="method" value="GET"/>
@@ -46,5 +27,6 @@ export default class Controls extends Component {
                 
             </div>
         )
-    }
 }
+
+export default Controls;
