@@ -6,14 +6,16 @@ import Header from '../presentations/Header'
 describe('testing for Container presentation', () => {
   it('renders the container page with all of its components', async() => {
     render(<Header/>);
-    
+
 	screen.getByText('REST-less');
 
+    render(<Container/>)
 
-//   const historyList = screen.getByRole('list', { name: 'request-history' });
+    const ul = screen.getByRole('list', { name: 'history-list' });
+    expect(ul).toMatchSnapshot();
 
-//   // checking for presence of results area
-//   const resultsDisplay = screen.getByLabelText('search-results');
-	
+    const span = screen.getByLabelText('json-results');
+    expect(span).toMatchSnapshot();
+
   });
 });

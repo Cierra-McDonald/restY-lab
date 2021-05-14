@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing for Container presentation renders the container page with all of its components 1`] = `
+<ul
+  aria-label="history-list"
+>
+  <li>
+    <div>
+      GET
+       
+      http://imthebomb.com
+    </div>
+  </li>
+  <li>
+    <div>
+      POST
+       
+      http://imthebomb.com
+    </div>
+  </li>
+  <li>
+    <div>
+      PUT
+       
+      http://imthebomb.com
+    </div>
+  </li>
+  <li>
+    <div>
+      DELETE
+       
+      http://imthebomb.com
+    </div>
+  </li>
+</ul>
+`;
+
+exports[`testing for Container presentation renders the container page with all of its components 2`] = `
+<div
+  aria-label="json-results"
+>
+  <h3>
+    Results!
+  </h3>
+  <p>
+    "[{fake: but real to me}]"
+  </p>
+</div>
+`;
