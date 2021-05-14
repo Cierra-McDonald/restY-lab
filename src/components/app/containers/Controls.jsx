@@ -1,12 +1,12 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styles from './Containers.module.css'
 
 
-
-const Controls = ({ handleURLChange }) => {
+const Controls = ({ handleURLChange, submitChange }) => {
         return (
             <div className={styles.bigDiv}>
-                <form className={styles.form}>
+                <form className={styles.form}
+                    onSubmit={submitChange}>
                     <input type="text" placeholder="URL" className={styles.url}
                         onChange={handleURLChange}/>
                     <section className={styles.gatherButtons}>
